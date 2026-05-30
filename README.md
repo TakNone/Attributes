@@ -1,12 +1,12 @@
 # Attributes
 
-[![PHP Version](https://img.shields.io/badge/php-8%2B-blue)](https://www.php.net/)  [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![PHP Version](https://img.shields.io/badge/php-8%2B-blue)](https://www.php.net/) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-Attribute-based validation for PHP 8.3+ : validate method parameters, return values and property access using compact, reusable attributes
+Attribute-based validation for PHP 8.4+ : validate method parameters, return values and property access using compact, reusable attributes
 
-# Validator — Declarative validation using PHP 8+ attributes
+# Validator - Declarative validation using PHP 8+ attributes
 
-A lightweight, framework-agnostic library that lets you declare validation rules as PHP attributes. Validate method parameters, method return values, and property get/set using compact, reusable attribute classes (for example `#[Range]`, `#[Pattern]`, `#[Vector]`). Built-in caching of reflection metadata keeps runtime overhead low
+A lightweight, framework-agnostic library that lets you declare validation rules as PHP attributes. Validate method parameters, method return values, and property get/set using compact, reusable attribute classes ( for example `#[Range]`, `#[Pattern]`, `#[Vector]` ) Built-in caching of reflection metadata keeps runtime overhead low
 
 ---
 
