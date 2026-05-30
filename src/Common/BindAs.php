@@ -20,9 +20,9 @@ final class BindAs implements ValidatorInterface {
 		$spread = boolval($this->spread and is_array($value));
 		$args = ($spread ? $value : array($value));
 		$class = new ReflectionClass($this->class);
-		/* Can use newLazyGhost for php 8.4+ */
 		if($this->method === '__construct'){
-			return $class->newInstanceArgs($args);
+			// return $class->newInstanceArgs($args); //
+			return $class->newLazyGhost(fn(object $object) : mixed => call_user_func_array([$object,$this->method],$args));
 		}
 		$method = $class->getMethod($this->method);
 		return $method->invokeArgs($method->isStatic() ? null : $class->newInstanceWithoutConstructor(),$args);

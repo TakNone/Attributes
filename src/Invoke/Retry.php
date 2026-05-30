@@ -12,7 +12,7 @@ use Throwable;
 
 use RuntimeException;
 
-use function Amp\delay;
+use function Tak\Asyncio\delay;
 
 #[Attribute(Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 final class Retry implements InvokeInterface {

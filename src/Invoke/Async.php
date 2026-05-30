@@ -10,7 +10,7 @@ use Attribute;
 
 use Throwable;
 
-use function Amp\async;
+use function Tak\Asyncio\async;
 
 #[Attribute(Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 final class Async implements InvokeInterface {

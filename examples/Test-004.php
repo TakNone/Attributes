@@ -16,7 +16,7 @@ use Tak\Attributes\Common\StartsWith;
 
 use Tak\Attributes\Common\In;
 
-use Revolt\EventLoop;
+use Tak\Asyncio\Loop;
 
 final class UserService {
 	public int $counter = 0;
@@ -39,6 +39,6 @@ $service = new UserService();
 
 var_dump($service->register(['user'=>'me'],'@My User Name !','admin'));
 
-EventLoop::run();
+Loop::run();
 
 ?>

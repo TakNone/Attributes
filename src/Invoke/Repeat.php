@@ -6,13 +6,13 @@ namespace Tak\Attributes\Invoke;
 
 use Tak\Attributes\InvokeInterface;
 
-use Revolt\EventLoop;
+use Tak\Asyncio\Loop;
 
 use Attribute;
 
 use Throwable;
 
-use function Amp\async;
+use function Tak\Asyncio\async;
 
 #[Attribute(Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 final class Repeat implements InvokeInterface {
@@ -24,7 +24,7 @@ final class Repeat implements InvokeInterface {
 			call_user_func_array($callback,$arguments);
 		});
 		if($this->timeout > 0){
-			EventLoop::unreference(EventLoop::delay($this->timeout,fn() : null => EventLoop::cancel($id)));
+			EventLoop::unreference(EventLoop::delay($this->timeout,static fn() : null => EventLoop::cancel($id)));
 		}
 		return $future->await();
 	}

@@ -1,7 +1,7 @@
 {
     "name": "taknone/attributes",
     "license": "MIT",
-    "description": "Attribute-based validation for PHP 8.3+",
+    "description": "Attribute-based validation for PHP 8.4+",
     "type": "library",
     "keywords": [
         "attribute",
@@ -9,6 +9,7 @@
         "filter",
         "php",
         "checker",
+        "reflection",
         "async"
     ],
     "autoload": {
@@ -24,10 +25,10 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "ext-json": "*",
         "ext-filter": "*",
         "ext-hash": "*",
-        "amphp/amp": "^3.1.0"
+        "taknone/asyncio": "*"
     }
 }
