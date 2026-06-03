@@ -20,11 +20,11 @@ final class Repeat implements InvokeInterface {
 	}
 	public function invoke(callable $callback,array $arguments) : mixed {
 		$future = async($callback,...$arguments);
-		$id = EventLoop::repeat($this->interval,function(string $id) use($callback,$arguments) : void {
+		$id = Loop::repeat($this->interval,function(string $id) use($callback,$arguments) : void {
 			call_user_func_array($callback,$arguments);
 		});
 		if($this->timeout > 0){
-			EventLoop::unreference(EventLoop::delay($this->timeout,static fn() : null => EventLoop::cancel($id)));
+			Loop::unreference(Loop::delay($this->timeout,static fn() : null => Loop::cancel($id)));
 		}
 		return $future->await();
 	}
